@@ -32,7 +32,7 @@ students.each do |url|
 	# cred
 	page.css('.one_fifth a').each { |e| cred[e.children.first['class']] = e['href']} 
 	#contact
-	page.css('#side-nav li').each { |e| contact[e['class']] = e.children.first['href']} 
+	page.css('#side-nav li').each { |e| contact[e['class']] = e.children.search("a").first["href"]} 
 	# tagline
 	tagline = page.css('h2#tagline').first.inner_text 
 	# fav apps names
@@ -52,10 +52,13 @@ students.each do |url|
 			image_url = e[1]
 		end
 	end
-	feed_1 = ""
-	feed_2 = ""
-	puts cred.inspect
-	data = [first_name,last_name,image_url,bio,tagline,contact["email"],contact["blog"],contact["linkedin"],contact["twitter"],cred["cred-github"],cred["cred-codeschool"],cred["cred-coderwall"],cred["cred-stackoverflow"],cred["cred-treehouse"],feed_1,feed_2]
+
+
+	feed_1, feed_2 = page.css('.one_half').map { |e|  e.inner_html }
+
+
+
+	data = [first_name,last_name,image_url,bio,tagline,contact["mail"],contact["blog"],contact["linkedin"],contact["twitter"],cred["cred-github"],cred["cred-codeschool"],cred["cred-coderwall"],cred["cred-stackoverflow"],cred["cred-treehouse"],feed_1,feed_2]
 	db.execute("INSERT INTO students (first_name,last_name,picture,bio,tagline,email,blog,linkedin,twitter,github,codeschool,coderwall,stackoverflow,treehouse,feed_1,feed_2) 
 		VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", data)
 	 i = 0
