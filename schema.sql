@@ -5,7 +5,6 @@ CREATE TABLE students(
 	last_name VARCHAR(255),
 	picture TEXT,
 	bio VARCHAR(255),
-	students_id INTEGER,
 	tagline VARCHAR(255),
 	email VARCHAR(255),
 	blog VARCHAR(255),
@@ -15,9 +14,7 @@ CREATE TABLE students(
 	codeschool VARCHAR(255),
 	coderwall VARCHAR(255),
 	stackoverflow VARCHAR(255),
-	treehouse VARCHAR(255),
-	feed_1 VARCHAR(255),
-	feed_2 VARCHAR(255)
+	treehouse VARCHAR(255)
 );
 
 CREATE TABLE fav_apps(
