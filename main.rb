@@ -1,10 +1,17 @@
 require 'sinatra'
 require 'sqlite3'
 
+class Student
+	attr_accessor :student_info
+
+
   get '/' do
 		erb :index
   end
 
-  get '/student_profiles' do
+  get '/:id' do
+  	@student_info = {}
   	erb :student_page
+  
 	end
+end
