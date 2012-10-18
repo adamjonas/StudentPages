@@ -35,7 +35,7 @@
 
 
 
-<div class="jonas-profile-photo">
+<div class="<%= @student_info['last_name'].downcase %>-profile-photo">
   <img src="images/circle-mask.png"/>
 </div>
 
@@ -51,7 +51,7 @@
           </div>
           <!-- MIDDLE COLUMN -->
           <div class="two_third">
-            <h1><%= @student_info['first_name'] + @student_info['last_name'] %></h1>
+            <h1><%= @student_info['first_name'] + " " + @student_info['last_name'] %></h1>
             <h2 id='tagline'><%= @student_info['tagline'] %></h2>
             <p><%= @student_info['bio'] %></p>
 
