@@ -12,7 +12,7 @@ images = css.to_s.scan(/\.(.*?-photo)[^}]+?background:.*?\(([\S\s]+?)\)/)
 index = Nokogiri::HTML(open("http://students.flatironschool.com/"))
 index.css('.one_third a').each {|e| students << e['href']}
 ##### get individual student information #####
-id = 0
+id = 1
 students.each do |url|
 	next if url == "billymizrahi.html"
 	cred = {}
