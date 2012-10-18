@@ -27,7 +27,12 @@ class Student
 
 def find(student_id)
   @db.results_as_hash = true
-  @db.execute("SELECT * FROM students WHERE id = ?", student_id)
+  student_hash =@db.execute("SELECT * FROM students WHERE id = ?", student_id)[0]
+  id = student_hash['id']
+  @db.results_as_hash = false
+  favs =@db.execute("SELECT * FROM fav_apps WHERE students_id = ?", id)
+  student_hash["fav_apps"] = favs
+  student_hash
 end
 
 end
