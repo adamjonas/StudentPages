@@ -14,7 +14,9 @@ CREATE TABLE students(
 	codeschool VARCHAR(255),
 	coderwall VARCHAR(255),
 	stackoverflow VARCHAR(255),
-	treehouse VARCHAR(255)
+	treehouse VARCHAR(255),
+	feed_1 VARCHAR(255),
+	feed_1 VARCHAR(255)
 );
 
 CREATE TABLE fav_apps(
