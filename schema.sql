@@ -16,7 +16,7 @@ CREATE TABLE students(
 	stackoverflow VARCHAR(255),
 	treehouse VARCHAR(255),
 	feed_1 VARCHAR(255),
-	feed_1 VARCHAR(255)
+	feed_2 VARCHAR(255)
 );
 
 CREATE TABLE fav_apps(
