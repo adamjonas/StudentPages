@@ -21,7 +21,7 @@ db = SQLite3::Database.open('studentprofiles.sqlite')
 
 class Student
   attr_accessor :id, :first_name, :last_name, :picture, :bio, :tagline, :email, :blog,
-  :linkedin, :twitter, :github, :codeschool, :coderwall, :stackoverflow, :treehouse
+  :linkedin, :twitter, :github, :codeschool, :coderwall, :stackoverflow, :treehouse, :feed_1, :feed_2
 
 def self.find(student_id)
   db.execute("SELECT * FROM students WHERE id = ?", student_id)
@@ -39,7 +39,7 @@ student = Student.new
 
 [:id, :first_name, :last_name, :picture, :bio, :tagline, :email, :blog,
   :linkedin, :twitter, :github, :codeschool, :coderwall, :stackoverflow,
-  :treehouse].each do |attribute|
+  :treehouse, :feed_1, :feed_2].each do |attribute|
   student.send("#{attribute}=", "value")
   assert_equal student.send(attribute), "value"
 end
