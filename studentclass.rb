@@ -17,14 +17,20 @@ def assert(statement)
 end
 
 #TESTS
-db = SQLite3::Database.open('studentprofiles.sqlite')
 
 class Student
+  attr_reader :db
+
+  def intialize("studentinfo.sqlite")
+    @db = SQLite3::Database.open('studentinfo.sqlite')
+  end
+
   attr_accessor :id, :first_name, :last_name, :picture, :bio, :tagline, :email, :blog,
   :linkedin, :twitter, :github, :codeschool, :coderwall, :stackoverflow, :treehouse, :feed_1, :feed_2
 
 def self.find(student_id)
-  db.execute("SELECT * FROM students WHERE id = ?", student_id)
+  @db.results_as_hash = true
+  @db.execute("SELECT * FROM students WHERE id = ?", student_id)
 end
 
 end
