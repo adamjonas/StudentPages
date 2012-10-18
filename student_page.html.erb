@@ -43,10 +43,10 @@
 
             <nav id='side-nav'>
               <ul>
-                <li class='mail'><a href="mailto:adam.jonas@flatironschool.com">Mail</a></li>
-                <li class='blog'><a href="http://www.adamjonas.com">Blog</a></li>
-                <li class='linkedin'><a href="http://linkedin.com/pub/adam-jonas/2a/518/677">LinkedIn</a></li>
-                <li class='twitter'><a href="https://twitter.com/adamcjonas">Twitter</a></li>
+                <li class='mail'><a href=<%= email %>>Mail</a></li>
+                <li class='blog'><a href=<%= blog %>>Blog</a></li>
+                <li class='linkedin'><a href=<%= linkedin %>>LinkedIn</a></li>
+                <li class='twitter'><a href=<%= twitter %>>Twitter</a></li>
               </ul>
             </nav> <!-- this is the end of side nav -->
           </div>
@@ -59,21 +59,12 @@
 <br/><br/>
             <h2 id='tagline'>My favorite stuff</h2>
 
-<div class="one_third">
-<h4>RailsCasts</h4>
-<p>Because Ryan Bates will forget more than I'll ever know and he's good at explaining it.</p>
-</div>
-
-
-<div class="one_third">
-<h4>Alfred</h4>
-<p>I need someone to do my bidding because using your mouse kills kittens.</p>
-</div>
-
-<div class="one_third last">
-<h4>Ruby Rogues</h4>
-<p>Nothing like debating inheritance versus modules when doing plyos at the gym.</p>
-</div>
+<% fav_apps.each do |app|  %>
+  <div class="one_third">
+    <h4><%= name %></h4>
+    <p><%= description %></p>
+  </div>
+  <% end %>
 
 
           </div>
@@ -98,29 +89,16 @@
         <div class="clear"></div>
         <h2 class="title"><span>Social Nerdery</span></h2>
 
-
+        
         <div class="one_half">
-
-          <h2>Blog Feed</h2>
-
-            <script language="JavaScript" src="http://itde.vccs.edu/rss2js/feed2js.php?src=http%3A%2F%2Fajonas.herokuapp.com%2Fatom.xml&chan=n&num=5&date=y&desc=1&targ=y" type="text/javascript"></script>
-
-            <noscript>
-            <a href="http://itde.vccs.edu/rss2js/feed2js.php?src=http%3A%2F%2Fajonas.herokuapp.com%2Fatom.xml&chan=n&num=5&date=y&desc=1&targ=y&html=y">View RSS feed</a>
-            </noscript>
-
-
+          <% feet_1 each do |script| %>
+          <%= script %>
         </div>
 
         <div class="one_half last">
 
-          <h2> Github Feed</h2>
-
-            <script language="JavaScript" src="http://itde.vccs.edu/rss2js/feed2js.php?src=https%3A%2F%2Fgithub.com%2Fajonas04.atom&chan=n&num=5&desc=1&date=y&targ=y" type="text/javascript"></script>
-            <noscript>
-            <a href="http://itde.vccs.edu/rss2js/feed2js.php?src=https%3A%2F%2Fgithub.com%2Fajonas04.atom&chan=n&num=5&desc=1&date=y&targ=y&html=y">View RSS feed</a>
-
-            </noscript>
+          <% feet_2 each do |script| %>
+          <%= script %>
 
         </div>
       <div class="clear"></div>
