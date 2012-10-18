@@ -43,26 +43,26 @@
 
             <nav id='side-nav'>
               <ul>
-                <li class='mail'><a href=<%= email %>>Mail</a></li>
-                <li class='blog'><a href=<%= blog %>>Blog</a></li>
-                <li class='linkedin'><a href=<%= linkedin %>>LinkedIn</a></li>
-                <li class='twitter'><a href=<%= twitter %>>Twitter</a></li>
+                <li class='mail'><a href=<%= student_info[email] %>>Mail</a></li>
+                <li class='blog'><a href=<%= student_info[blog] %>>Blog</a></li>
+                <li class='linkedin'><a href=<%= student_info[linkedin] %>>LinkedIn</a></li>
+                <li class='twitter'><a href=<%= student_info[twitter] %>>Twitter</a></li>
               </ul>
             </nav> <!-- this is the end of side nav -->
           </div>
           <!-- MIDDLE COLUMN -->
           <div class="two_third">
-            <h1><%= first_name last_name %></h1>
-            <h2 id='tagline'><%= tagline %></h2>
-            <p><%= bio %></p>
+            <h1><%= student_info[first]_name last_name %></h1>
+            <h2 id='tagline'><%= student_info[tagline] %></h2>
+            <p><%= student_info[bio] %></p>
 
 <br/><br/>
             <h2 id='tagline'>My favorite stuff</h2>
 
 <% fav_apps.each do |app|  %>
   <div class="one_third">
-    <h4><%= name %></h4>
-    <p><%= description %></p>
+    <h4><%= student_info[name] %></h4>
+    <p><%= student_info[description] %></p>
   </div>
   <% end %>
 
@@ -78,11 +78,11 @@
 
           <div class="columns">
           <div class="coder-cred">
-            <div class="one_fifth"><a href=<%= github %>><div class="cred-github"></div></a></div>
-            <div class="one_fifth"><a href=<%= codeschool %>><div class="cred-codeschool"></div></a></div>
-            <div class="one_fifth"><a href=<%= coderwall %>><div class="cred-coderwall"></div></a></div>
-            <div class="one_fifth"><a href=<%= stackoverflow %>><div class="cred-stackoverflow"></div></a></div>
-            <div class="one_fifth last"><a href=<%= treehouse %>><div class="cred-treehouse"></div></a></div>
+            <div class="one_fifth"><a href=<%= student_info[github] %>><div class="cred-github"></div></a></div>
+            <div class="one_fifth"><a href=<%= student_info[codeschool] %>><div class="cred-codeschool"></div></a></div>
+            <div class="one_fifth"><a href=<%= student_info[coderwall] %>><div class="cred-coderwall"></div></a></div>
+            <div class="one_fifth"><a href=<%= student_info[stackoverflow] %>><div class="cred-stackoverflow"></div></a></div>
+            <div class="one_fifth last"><a href=<%= student_info[treehouse] %>><div class="cred-treehouse"></div></a></div>
           </div>
           </div>
 
