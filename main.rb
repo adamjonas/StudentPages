@@ -3,9 +3,7 @@ require 'sqlite3'
 
 require_relative 'studentclass'
 
-class Student
-	attr_accessor :student_info
-
+class StudentApp
 
   get '/' do
 		erb :index
