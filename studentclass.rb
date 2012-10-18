@@ -16,8 +16,6 @@ def assert(statement)
   end
 end
 
-#TESTS
-
 class Student
   attr_reader :db
 
@@ -25,8 +23,7 @@ class Student
     @db = SQLite3::Database.open('studentinfo.sqlite')
   end
 
-  attr_accessor :id, :first_name, :last_name, :picture, :bio, :tagline, :email, :blog,
-  :linkedin, :twitter, :github, :codeschool, :coderwall, :stackoverflow, :treehouse, :feed_1, :feed_2
+  
 
 def self.find(student_id)
   @db.results_as_hash = true
@@ -35,6 +32,7 @@ end
 
 end
 
+ #TEST
 begin
   assert Student.new.is_a?(Student)
 rescue => e
