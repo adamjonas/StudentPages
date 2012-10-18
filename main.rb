@@ -5,6 +5,6 @@ require 'sqlite3'
 		erb :index
   end
 
-  get '/:student_id' do |student|
-  	erb :student
+  get '/student_profiles' do
+  	erb :student_page
 	end
