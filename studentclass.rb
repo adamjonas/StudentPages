@@ -35,6 +35,11 @@ def find(first_name, last_name)
   student_hash
 end
 
+def get_all
+  @db.results_as_hash = true
+  @db.execute("SELECT * FROM students")
+end
+
 end
 
 #  #TEST
