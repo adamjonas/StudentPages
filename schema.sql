@@ -1,8 +1,8 @@
 
 CREATE TABLE students(
 	id INTEGER PRIMARY KEY,
-	first_name TEXT,
-	last_name TEXT,
+	first_name TEXT COLLATE NOCASE,
+	last_name TEXT COLLATE NOCASE,
 	picture TEXT,
 	bio TEXT,
 	tagline TEXT,

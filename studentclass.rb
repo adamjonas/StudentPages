@@ -25,9 +25,9 @@ class Student
 
   
 
-def find(student_id)
+def find(first_name, last_name)
   @db.results_as_hash = true
-  student_hash =@db.execute("SELECT * FROM students WHERE id = ?", student_id)[0]
+  student_hash =@db.execute("SELECT * FROM students WHERE first_name = ? AND last_name = ?", first_name, last_name).first
   id = student_hash['id']
   @db.results_as_hash = false
   favs =@db.execute("SELECT * FROM fav_apps WHERE students_id = ?", id)
