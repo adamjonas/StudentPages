@@ -37,11 +37,11 @@
           <a href="<%= student["first_name"] + "_" + student["last_name"] + ".html" %>"><img class="person" src="images/thumbnail_<%= student["first_name"] + student["last_name"] %>.jpg" alt="<%= student["first_name"] + " " + student["last_name"] %>"/>
             <div class="name-position">
               <h2><%= student["first_name"] + " " + student["last_name"] %></h2> 
-              <div class="position"><%= student["tagline"] %></div>
+              <div class="position"><%= student["tagline"][0..33] %></div>
             </div>
             <div class="clear"></div>
           </a>
-          <p class="excerpt"><%= student["bio"][0..180] %></p>
+          <p class="excerpt"><%= student["bio"][0..139] %></p>
         </div>
 <% end %>
 
