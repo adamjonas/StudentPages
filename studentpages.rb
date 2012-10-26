@@ -3,7 +3,7 @@ require 'sqlite3'
 
 require_relative 'studentclass'
 
-class StudentApp
+class StudentPages
 
   get '/' do
     @student_info = Student.new.get_all
