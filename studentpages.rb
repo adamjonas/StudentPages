@@ -3,7 +3,7 @@ require 'sqlite3'
 
 require_relative 'studentclass'
 
-# class StudentPages
+class StudentPages
 
   get '/' do
     @student_info = Student.new.get_all
@@ -17,4 +17,4 @@ require_relative 'studentclass'
   	erb :student_page
   	
 	end
-# end
+end

@@ -1,2 +1,2 @@
 require './studentpages'
-run Sinatra::Application
+run StudentPages.new
