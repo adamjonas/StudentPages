@@ -1,2 +1,2 @@
-require 'main'
+require './studentpages'
 run StudentPages.new
