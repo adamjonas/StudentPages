@@ -1,5 +1,5 @@
-require 'bundler/capistrano'
-set :application, "studentpages"
+#require 'bundler/capistrano'
+set :application, "StudentPages"
 set :repository,  "git@github.com:ajonas04/StudentPages.git"
 
 set :scm, :git
